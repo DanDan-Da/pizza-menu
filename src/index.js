@@ -68,10 +68,14 @@ function Header() {
 }
 
 function Menu() {
+  const pizzas = pizzaData;
+  const numPizzas = pizzas.length;
+
   return (
     <main className="menu">
       <h2>Our Menu</h2>
 
+<<<<<<< HEAD
       <ul className="pizzas">
         {pizzaData.map((pizza) => (
           <Pizza pizzaObj={pizza} key={pizza.name} />
@@ -92,6 +96,32 @@ function Menu() {
   photoName="pizzas/funghi.jpg"
 />
 */}
+=======
+      {numPizzas > 0 ? (
+        <ul className="pizzas">
+          {pizzas.map((pizza) => (
+            <Pizza pizzaObj={pizza} key={pizza.name} />
+          ))}
+        </ul>
+      ) : (
+        <p>We're still working on our menu. Please come back later :)</p>
+      )}
+
+      {/* Examples without map:
+      <Pizza
+        name="Pizza Spinaci"
+        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
+        photoName="pizzas/spinaci.jpg"
+        price={10}
+      />
+      <Pizza
+        name="Pizza Funghi"
+        ingredients="Tomato, mushrooms"
+        photoName="pizzas/funghi.jpg"
+        price={12}
+      />
+      */}
+>>>>>>> 1462698 (Conditions changed)
     </main>
   );
 }
@@ -123,12 +153,39 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <footer> {new Date().toLocaleTimeString()} We're currently open </footer>
+      {isOpen ? (
+        <div className="order">
+          <p>We're open until {closeHour}:00. Come visit us or order online!</p>
+          <button className="btn">Order</button>
+        </div>
+      ) : (
+        <p>
+          We're happy to welcome you between {openHour}:00 and {closeHour}:00
+        </p>
+      )}
     </footer>
   );
   //return React.createElement("footer", null, "We're currently open!");
 }
 
+<<<<<<< HEAD
+=======
+function Pizza(props) {
+  console.log(props);
+
+  return (
+    <div className="pizza">
+      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
+      <div>
+        <h3>{props.pizzaObj.name}</h3>
+        <p>{props.pizzaObj.ingredients}</p>
+        <span>{props.pizzaObj.price + 3}</span>
+      </div>
+    </div>
+  );
+}
+
+>>>>>>> 1462698 (Conditions changed)
 // React v18
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
