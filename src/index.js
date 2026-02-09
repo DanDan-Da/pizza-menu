@@ -75,28 +75,6 @@ function Menu() {
     <main className="menu">
       <h2>Our Menu</h2>
 
-<<<<<<< HEAD
-      <ul className="pizzas">
-        {pizzaData.map((pizza) => (
-          <Pizza pizzaObj={pizza} key={pizza.name} />
-        ))}
-      </ul>
-
-      {/*
-<Pizza
-  name="Pizza Spinaci"
-  ingredients="Tomato, mozarella, spinach and ricotta cheese"
-  photoName="pizzas/spinaci.jpg"
-  price={10}
-/>
-<Pizza
-  name="Pizza Funghi"
-  ingredients="Tomato, mushrooms"
-  price={12}
-  photoName="pizzas/funghi.jpg"
-/>
-*/}
-=======
       {numPizzas > 0 ? (
         <ul className="pizzas">
           {pizzas.map((pizza) => (
@@ -106,29 +84,11 @@ function Menu() {
       ) : (
         <p>We're still working on our menu. Please come back later :)</p>
       )}
-
-      {/* Examples without map:
-      <Pizza
-        name="Pizza Spinaci"
-        ingredients="Tomato, mozarella, spinach, and ricotta cheese"
-        photoName="pizzas/spinaci.jpg"
-        price={10}
-      />
-      <Pizza
-        name="Pizza Funghi"
-        ingredients="Tomato, mushrooms"
-        photoName="pizzas/funghi.jpg"
-        price={12}
-      />
-      */}
->>>>>>> 1462698 (Conditions changed)
     </main>
   );
 }
 
 function Pizza(props) {
-  console.log(props);
-
   return (
     <li className="pizza">
       <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
@@ -168,24 +128,6 @@ function Footer() {
   //return React.createElement("footer", null, "We're currently open!");
 }
 
-<<<<<<< HEAD
-=======
-function Pizza(props) {
-  console.log(props);
-
-  return (
-    <div className="pizza">
-      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
-      <div>
-        <h3>{props.pizzaObj.name}</h3>
-        <p>{props.pizzaObj.ingredients}</p>
-        <span>{props.pizzaObj.price + 3}</span>
-      </div>
-    </div>
-  );
-}
-
->>>>>>> 1462698 (Conditions changed)
 // React v18
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
